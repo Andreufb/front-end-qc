@@ -1,0 +1,49 @@
+<h1 class="container">
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Type of data</mat-label>
+                        <mat-select [(ngModel)]='selected_endpoint' name='selected_endpoint' required>
+                            <mat-option *ngFor="let endpoint of endpoints" value="{{endpoint}}">
+                                {{endpoint}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Method</mat-label>
+                        <mat-select required [(ngModel)]='selected_method' name='selected_method'>
+                            <mat-option *ngFor="let method of methods" value="{{method}}">
+                                {{method}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+
+
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Aditional data</mat-label>
+                        <input matInput [(ngModel)]='introduced_data' name='introduced_data'>
+                        <mat-hint>Required for PUT method</mat-hint>
+                    </mat-form-field>
+                </td>
+
+                <td>
+                    <input type="button" value="submit" (click)="takeInfo($event)">
+                </td>
+            </tr>
+        </table>
+        
+        <ul style="list-style-type:{{show}}">{{message1}}
+            <li>{{message2}}</li>
+            <li>{{message3}}</li>
+            <li>{{message4}}</li>
+        </ul>
+
+    </form>
+</h1>

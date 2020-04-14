@@ -1,0 +1,20 @@
+<h1 class="container">
+    <form>
+
+        <mat-form-field appearance="fill">
+            <mat-label>User</mat-label>
+            <input matInput [(ngModel)]='user_email' name='user_email' required>
+            <mat-hint>email or complete name</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]='user_password' name='user_password' required type="password">
+        </mat-form-field>
+
+        <input type="button" value="submit" (click)="takeInfo($event)">
+
+       <p>{{message}}</p>
+
+    </form>
+</h1>
